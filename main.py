@@ -44,7 +44,7 @@ if __name__ == "__main__":
     print(f"Blok 2 vytěžen za {perf_counter() - ref : .2f} sekund.")
     print("Těžím třetí block...")
     ref = perf_counter()
-    blockchain.append(Block("Ahoj, ja jsem prvni blok", blockchain[-1].hash).mineBlock(difficulty))
+    blockchain.append(Block("A ja treti", blockchain[-1].hash).mineBlock(difficulty))
     print(f"Blok 3 vytěžen za {perf_counter() - ref : .2f} sekund.")
 
     print(json.dumps([block.__dict__ for block in blockchain], indent=4, sort_keys=True))
