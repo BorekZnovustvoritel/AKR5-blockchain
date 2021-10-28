@@ -253,6 +253,12 @@ if __name__ == "__main__":
     blockchain.uploadMinedBlock(blockchain.makeBlock().mineBlock())
     print(f"Druhý block vytěžen za {perf_counter() - ref : .2f} sekund.")
 
+    blockchain.addTransaction("Thanos", "Alice", 20)
+    print("Těžím třetí block...")
+    ref = perf_counter()
+    blockchain.uploadMinedBlock(blockchain.makeBlock().mineBlock())
+    print(f"Třetí block vytěžen za {perf_counter() - ref : .2f} sekund.")
+
     print(blockchain.toJSON())
 
     print("Kontrola Blockchainu: " + str(blockchain.isChainValid()))
